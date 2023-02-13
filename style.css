@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fonte-familia-staat: 'Staatliches', sans-serif;
+  --fonte-familia-pala: 'Palanquin', sans-serif;
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #eff1ff;
+}
+
+.page {
+  max-width: (38.4rem, 30rem + 60vw, 128rem);
+  text-align: center;
+}
+
+.page2 {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #8e9aaf;
+  height: 27.9rem;
+}
+
+header img {
+  margin: 3.2rem auto;
+}
+
+header h1 {
+  font-family: var(--fonte-familia-staat);
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+
+  background-color: #cbc0d3;
+  height: 4.9rem;
+  color: #ffffff;
+
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header p {
+  display: none;
+}
+
+main {
+  margin: 1.4rem 3.2rem 6rem;
+  display: grid;
+  gap: 3.6rem;
+  margin-top: 6.3rem;
+}
+
+main p {
+  font-family: var(--fonte-familia-pala);
+
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.5rem;
+
+  color: #23053a;
+
+  max-width: 30.5rem;
+  padding: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  position: relative;
+  font-family: var(--fonte-familia-staat);
+
+  animation: baixoParaCima 2s;
+}
+
+.card img {
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background-color: #feeafa;
+  border-radius: 2rem;
+
+  font-family: var(--fonte-familia-staat);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  padding: 0 2.3rem;
+
+  color: #4a4e69;
+
+  display: inline-flex;
+  align-items: center;
+
+  animation: cimaParaBaixo 1s 500ms backwards;
+}
+
+.remove {
+  display: none;
+}
+
+footer {
+  display: none;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  color: #4a4e69;
+
+  margin: 0 auto 3rem;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4a4e69;
+}
+
+@keyframes baixoParaCima {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cimaParaBaixo {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    max-width: 128rem;
+    height: 72rem;
+  }
+
+  .page {
+    display: flex;
+  }
+
+  .remove {
+    display: flex;
+  }
+
+  header {
+    height: 72rem;
+    width: 37.7rem;
+  }
+
+  header p {
+    font-family: var(--fonte-familia-pala);
+
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2rem;
+    /* or 83% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin: 3.2rem 4.8rem;
+
+    color: #ffffff;
+  }
+
+  main p {
+    display: none;
+  }
+
+  main {
+    margin: 1.4rem 3.2rem 4rem;
+    grid-template-areas:
+      'A B C'
+      'D B F'
+      'D E F';
+  }
+
+  main > div:nth-child(2) {
+    grid-area: A;
+  }
+
+  main > div:nth-child(3) {
+    grid-area: B;
+  }
+
+  main > div:nth-child(4) {
+    grid-area: C;
+  }
+
+  main > div:nth-child(5) {
+    grid-area: D;
+  }
+
+  main > div:nth-child(6) {
+    grid-area: E;
+  }
+
+  main > div:nth-child(7) {
+    grid-area: F;
+  }
+
+  footer {
+    display: block;
+  }
+}
